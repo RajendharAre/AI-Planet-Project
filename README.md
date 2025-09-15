@@ -137,7 +137,7 @@ cd backend
 pip install -r requirements.txt
 
 # Set environment variables (Windows)
-set DATABASE_URL=postgresql://postgres:Raju@33*@localhost:5432/workflow_db
+set DATABASE_URL=postgresql://username:password@localhost:5432/your_database
 set SECRET_KEY=your-secret-key-here
 set GEMINI_API_KEY=your-gemini-api-key
 set SERP_API_KEY=your-serp-api-key
@@ -168,7 +168,7 @@ npm run dev
 #### Option 1: Local PostgreSQL (Recommended)
 1. **Install PostgreSQL:**
    - Download from: https://www.postgresql.org/download/
-   - Use credentials: `postgres` / `Raju@33*`
+   - Set up your username and password during installation
    - Create database: `ai_planet_db`
 
 2. **Initialize Database:**
@@ -197,7 +197,7 @@ DATABASE_URL=postgresql+asyncpg://user:pass@host:port/db
 Create `.env` file in backend directory:
 ```env
 # Database
-DATABASE_URL=postgresql+asyncpg://postgres:Raju%4033%2A@localhost:5432/ai_planet_db
+DATABASE_URL=postgresql+asyncpg://username:password@localhost:5432/ai_planet_db
 
 # AI Services
 GEMINI_API_KEY=your_gemini_api_key
@@ -332,7 +332,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for comprehensive deployment options includin
 DEBUG=false
 ENV=production
 ALLOWED_ORIGINS=https://yourdomain.com
-DATABASE_URL=postgresql://user:pass@prod-host:5432/db
+DATABASE_URL=postgresql://username:password@prod-host:5432/database_name
 ```
 
 ## 📚 API Documentation
@@ -424,4 +424,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ for Full-Stack Engineering Internship Assignment**
 
-For questions or support, please contact: [your-email@example.com]
+For questions or support, please contact: [arerajendhar2903@gmail.com]
