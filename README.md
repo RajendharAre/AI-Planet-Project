@@ -137,10 +137,10 @@ cd backend
 pip install -r requirements.txt
 
 # Set environment variables (Windows)
-set DATABASE_URL=postgresql://postgres:Raju@33*@localhost:5432/workflow_db
+set DATABASE_URL=YOUR_URL
 set SECRET_KEY=your-secret-key-here
-set GEMINI_API_KEY=AIzaSyALIZXMFiJm31VGu6bTghrQUHINKBvFIBs
-set SERP_API_KEY=45eada61400f87f3c5882a4becf3a4838db5cd3c111c6ec1195fb2a25acff44c
+set GEMINI_API_KEY=YOUR_GEMMI_API_KEY
+set SERP_API_KEY=SERP_API_KEY
 
 # Initialize database
 python -c "from database import init_db; import asyncio; asyncio.run(init_db())"
@@ -424,4 +424,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ for Full-Stack Engineering Internship Assignment**
 
-For questions or support, please contact: [your-email@example.com]
+For questions or support, please contact: [arerajendhar2903@gmail.com]
