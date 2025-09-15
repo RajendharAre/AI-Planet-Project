@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import './modern-styles.css';
 import Canvas from './components/Canvas';
 import ChatModal from './components/ChatModal';
 import { uploadDoc, runWorkflow } from './api/api';
@@ -16,15 +17,36 @@ function App() {
     nodes: [
       {
         id: '1',
-        type: 'input',
-        data: { label: 'User Query' },
+        type: 'UserQuery',
+        data: { 
+          label: 'User Query',
+          type: 'UserQuery',
+          icon: '❓',
+          color: '#3B82F6'
+        },
         position: { x: 250, y: 25 },
       },
       {
         id: '2',
-        type: 'default',
-        data: { label: 'AI Response' },
+        type: 'LLMEngine',
+        data: { 
+          label: 'LLM Engine',
+          type: 'LLMEngine',
+          icon: '🤖',
+          color: '#8B5CF6'
+        },
         position: { x: 250, y: 125 },
+      },
+      {
+        id: '3',
+        type: 'Output',
+        data: { 
+          label: 'Output',
+          type: 'Output',
+          icon: '💬',
+          color: '#F59E0B'
+        },
+        position: { x: 250, y: 225 },
       }
     ],
     edges: [
@@ -32,6 +54,11 @@ function App() {
         id: 'e1-2',
         source: '1',
         target: '2',
+      },
+      {
+        id: 'e2-3',
+        source: '2',
+        target: '3',
       }
     ]
   };
@@ -55,8 +82,7 @@ function App() {
 
   const handleWorkflowSave = (definition) => {
     setWorkflowDefinition(definition);
-    setNotification('Workflow saved!');
-    setTimeout(() => setNotification(''), 3000);
+    // Notification is now handled in Canvas component
   };
 
   const handleRunWorkflow = async (query, customPrompt) => {

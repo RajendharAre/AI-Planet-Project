@@ -7,9 +7,9 @@ const api = axios.create({
 export const uploadDoc = (file) => {
   const fd = new FormData();
   fd.append("file", file);
-  return api.post("/docs/upload", fd, { headers: { "Content-Type": "multipart/form-data" }});
+  return api.post("/api/v1/documents/upload-public", fd, { headers: { "Content-Type": "multipart/form-data" }});
 };
 
 export const runWorkflow = (definition, query, custom_prompt=null) => {
-  return api.post("/workflow/run", {definition, query, custom_prompt});
+  return api.post("/api/v1/workflows/run-public", {definition, query, custom_prompt});
 };
